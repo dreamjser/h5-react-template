@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["ES2015", "dom"],
+    "strict": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit":true,
+    "noEmitOnError": true
+  },
+  "include": ["./src/**/*", "./src/*", "./typings/*"]
+}

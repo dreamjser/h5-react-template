@@ -1,0 +1,36 @@
+{
+  "name": "h5-mobile-bank-vue",
+  "version": "1.0.0",
+  "description": "a mobile bank project develop of vue",
+  "main": "index.js",
+  "scripts": {
+    "dev:single": "cli-dev-s --framework=react",
+    "dev:multiple": "cli-dev-m --framework=react",
+    "build:single": "npm run clean && cli-build-s --framework=react",
+    "build:multiple": "npm run clean && cli-build-m --framework=react",
+    "create": "cli-create --framework=react",
+    "report": "webpack-bundle-analyzer ./dist/stats.json",
+    "serve": "node ./json_server/server.js",
+    "clean": "rm -rf dist",
+    "publish": "npm i && npm run build:single"
+  },
+  "author": "sunyg@belink.com",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.5",
+    "@babel/runtime": "^7.20.6",
+    "@types/react": "17.0.35",
+    "@types/react-dom": "17.0.11",
+    "antd-mobile": "^5.26.0",
+    "axios": "^1.2.1",
+    "core-js": "^3.26.1",
+    "eslint-plugin-react": "^7.31.11",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "6.0.2",
+    "redux": "^4.2.0"
+  }
+}
