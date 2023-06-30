@@ -10,7 +10,7 @@ module.exports = {
   modulePrefix: 'mb_',
   proxyTable: {
     '/api': {
-      target: 'http://localhost:4000',
+      target: 'http://localhost:4002',
       changeOrigin: true
     }
   },

@@ -9,6 +9,9 @@ const View: FC = () => {
   }
 
   useEffect(() => {
+    App.api.auth.login().then((r: any) => {
+      console.log(r)
+    })
     setCount(22)
   }, [])
   return (
