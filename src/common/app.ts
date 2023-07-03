@@ -1,11 +1,11 @@
 import format from './utils/format'
 import regexp from './utils/regexp'
-import api from './api'
+import request from './request'
 
-const App = {
+const app = {
   format,
   regexp,
-  api,
+  request,
 }
 
-window.App = App
+window.App = app
