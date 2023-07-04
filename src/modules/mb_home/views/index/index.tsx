@@ -12,9 +12,13 @@ const View: FC = () => {
   useEffect(() => {
     App.request({
       url: 'login',
-    }).then((r: any) => {
-      console.log(r, '===')
     })
+      .then((r: any) => {
+        console.log(r, '===')
+      })
+      .catch((error: any) => {
+        console.log(error, '99')
+      })
     setCount(22)
   }, [])
   return (

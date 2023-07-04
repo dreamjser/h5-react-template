@@ -1,40 +1,46 @@
 import { getGlobalAxios, getAxios, AllType } from '@dreamjser/request-axios'
+import { showLoading, hideLoading } from './loading'
 import { Toast } from 'antd-mobile'
-
-let loadingCount = 0
-
-const showLoading = () => {
-  loadingCount++
-  Toast.show({
-    duration: 0,
-    icon: 'loading',
-    content: '加载中…',
-  })
-}
-
-const hideLoading = () => {
-  loadingCount--
-  if (loadingCount <= 0) {
-    Toast.clear()
-  }
-}
 
 const axiosInstance = getGlobalAxios({
   timeout: 30000,
-  baseURL: 'http://localhost:4002/api/',
+  baseURL: GLOBAL_CONFIG.BASE_URL,
 })
 
 const requestHook = (config: any) => {
   !config.slient && showLoading()
 }
 
-const responseHook = (data: any) => {
-  const { config } = data
+const responseHook = (reslove: any, reject: any, res: any) => {
+  const { config, data } = res
+  const { errorCode, errorMsg } = data
 
   !config.slint && setTimeout(hideLoading, 100)
-  console.log(data, '99')
 
-  return true
+  if (res.status < 200 && res.status >= 400) {
+    Toast.show({
+      icon: 'fail',
+      content: '网络请求失败',
+    })
+    return
+  }
+
+  if (errorCode !== '0') {
+    if (config.publicError) {
+      Toast.show({
+        icon: 'fail',
+        content: errorMsg,
+      })
+    } else {
+      reject({
+        errorCode,
+        errorMsg,
+      })
+    }
+    return
+  }
+
+  reslove(data)
 }
 
 const request = (opts: AllType) => {
