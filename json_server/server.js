@@ -7,11 +7,13 @@ const middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use('/api', router)
 router.render = (req, res) => {
-  res.jsonp({
-    errorCode: '0',
-    errorMsg: 'success',
-    data: res.locals.data
-  })
+  setTimeout(() => {
+    res.jsonp({
+      errorCode: '0',
+      errorMsg: 'success',
+      data: res.locals.data
+    })
+  }, 400)
 }
 
 server.listen(4002, () => {

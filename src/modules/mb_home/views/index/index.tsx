@@ -1,5 +1,6 @@
 import './index.less'
 import React, { FC, useState, useEffect } from 'react'
+import { Button } from 'antd-mobile'
 
 const View: FC = () => {
   const [count, setCount] = useState(10)
@@ -18,7 +19,7 @@ const View: FC = () => {
   }, [])
   return (
     <div className="page-container" onClick={addCount}>
-      demo222额
+      <Button color="primary">张三</Button>
     </div>
   )
 }
