@@ -12,7 +12,8 @@
     "report": "webpack-bundle-analyzer ./dist/stats.json",
     "serve": "node ./json_server/server.js",
     "clean": "rm -rf dist",
-    "publish": "npm i && npm run build:single"
+    "publish": "npm i && npm run build:single",
+    "prepare": "husky install"
   },
   "author": "sunyg@belink.com",
   "license": "ISC",
