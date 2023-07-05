@@ -13,14 +13,15 @@
     "serve": "node ./json_server/server.js",
     "clean": "rm -rf dist",
     "publish": "npm i && npm run build:single",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "author": "sunyg@belink.com",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "json-server": "^0.17.1",
     "lint-staged": "^13.2.3"
   },
