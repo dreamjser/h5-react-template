@@ -19,21 +19,21 @@ module.exports = {
     'plugin:react/recommended',
     'prettier',
   ],
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  },
   globals: {
-    App: false,
-    GLOBAL_CONFIG: false,
+    App: 'readonly',
+    GLOBAL_CONFIG: 'readonly',
   },
-  // required to lint *.vue files
+
   plugins: [
     'react',
     '@typescript-eslint',
     'prettier',
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   // add your custom rules here
   rules: {
     'no-console': 'off',

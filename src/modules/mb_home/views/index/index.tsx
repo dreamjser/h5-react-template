@@ -8,13 +8,12 @@ const View: FC = () => {
   function addCount() {
     return setCount(count + 4)
   }
-
   useEffect(() => {
     App.request({
       url: 'login',
     })
       .then((r: any) => {
-        console.log(r, '===')
+        console.log(r, '11')
       })
       .catch((error: any) => {
         console.log(error, '99')
