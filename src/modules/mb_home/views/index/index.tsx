@@ -1,27 +1,19 @@
 import './index.less'
-import React, { FC, useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import React, { FC, useEffect } from 'react'
 import { Button } from 'antd-mobile'
+import { getUserInfo } from '@/common/store/user_info_reducer'
 
 const View: FC = () => {
-  const [count, setCount] = useState(10)
+  const userInfo = useSelector((state: any) => state.userInfo.info)
+  const dispatch = useDispatch()
 
-  function addCount() {
-    return setCount(count + 4)
-  }
   useEffect(() => {
-    App.request({
-      url: 'login',
-    })
-      .then((r: any) => {
-        console.log(r, '11')
-      })
-      .catch((error: any) => {
-        console.log(error, '99')
-      })
-    setCount(22)
+    dispatch(getUserInfo())
   }, [])
   return (
-    <div className="page-container" onClick={addCount}>
+    <div className="page-container">
+      {userInfo.name}
       <Button color="primary">张三</Button>
     </div>
   )
