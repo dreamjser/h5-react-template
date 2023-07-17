@@ -9,6 +9,7 @@ module.exports = {
     ['@babel/preset-typescript']
   ],
   plugins: [
+    ['lodash'],
     ['@babel/plugin-transform-runtime'],
   ]
 }
