@@ -7,6 +7,8 @@ module.exports = {
     '@tmp': path.resolve(__dirname, '.tmp'),
     'antd-mobile': 'antd-mobile/2x'
   },
+  // 根目录redirect地址
+  rootRedirect: '/mb_home/index/index',
   devPort: '3003',
   modulePrefix: 'mb_',
   proxyTable: {
