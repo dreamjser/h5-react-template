@@ -15,15 +15,7 @@ const responseHook = (reslove: any, reject: any, res: any) => {
   const { config, data } = res
   const { errorCode, errorMsg } = data
 
-  !config.slint && setTimeout(hideLoading, 100)
-
-  if (res.status < 200 && res.status >= 400) {
-    Toast.show({
-      icon: 'fail',
-      content: '网络请求失败',
-    })
-    return
-  }
+  !config.slient && setTimeout(hideLoading, 100)
 
   if (errorCode !== '0') {
     if (config.publicError) {
@@ -46,7 +38,12 @@ const responseHook = (reslove: any, reject: any, res: any) => {
 const request = (opts: AllType) => {
   opts.requestHook = requestHook
   opts.responseHook = responseHook
-  return getAxios(opts, axiosInstance)
+  return getAxios(opts, axiosInstance).catch(() => {
+    Toast.show({
+      icon: 'fail',
+      content: '网络请求失败',
+    })
+  })
 }
 
 export default request
