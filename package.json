@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
-  "author": "sunyg@belink.com",
+  "author": "dreamjser@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -35,6 +35,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "antd": "^5.7.3",
     "antd-mobile": "^5.32.0",
     "core-js": "^3.31.1",
     "lodash": "^4.17.21",
