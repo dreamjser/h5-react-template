@@ -1,19 +1,23 @@
 // https://github.com/michael-ciniawsky/postcss-load-config
+const path = require('path')
 
-module.exports = {
-  "plugins": {
-    "postcss-import": {},
-    "postcss-url": {},
-    "autoprefixer": {},
-    "postcss-px-to-viewport": {
-      unitToConvert: "px",
-      viewportWidth: 750,
-      unitPrecision: 6,
-      propList: ["*"],
-      minPixelValue: 2,
-      mediaQuery: true,
-      replace: true,
-      landscape: false
+module.exports = ({file}) =>  {
+  const designWidth = file.includes(path.join('node_modules', 'antd-mobile')) ? 375 : 750;
+  return {
+    "plugins": {
+      "postcss-import": {},
+      "postcss-url": {},
+      "autoprefixer": {},
+      "postcss-px-to-viewport": {
+        unitToConvert: "px",
+        viewportWidth: designWidth,
+        unitPrecision: 6,
+        propList: ["*"],
+        minPixelValue: 2,
+        mediaQuery: true,
+        replace: true,
+        landscape: false
+      }
     }
   }
 }
