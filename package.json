@@ -13,7 +13,7 @@
     "serve": "node ./json_server/server.js",
     "clean": "rm -rf dist",
     "publish": "npm i && npm run build:single",
-    "prepare": "husky install",
+    "prepare": "git init && chmod ug+x .husky/* && husky install",
     "pre-commit": "lint-staged"
   },
   "author": "dreamjser@gmail.com",
