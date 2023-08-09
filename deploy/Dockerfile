@@ -8,7 +8,7 @@ RUN npm i pnpm -g && pnpm i --ignore-scripts
 
 COPY . /apps
 
-RUN npm run publish:s-test
+RUN npm run build:s-test
 
 
 FROM nginx
