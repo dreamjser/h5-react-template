@@ -6,7 +6,7 @@ COPY package*.json /apps/
 
 RUN npm i pnpm -g && pnpm i
 
-COPY . /project
+COPY . /apps
 
 RUN npm run publish:s-test
 
