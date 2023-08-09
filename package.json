@@ -12,7 +12,7 @@
     "report": "webpack-bundle-analyzer ./dist/stats.json",
     "serve": "node ./json_server/server.js",
     "clean": "rm -rf dist",
-    "prepare": "git init && chmod ug+x .husky/* && husky install",
+    "prepare": "chmod ug+x .husky/* && husky install",
     "pre-commit": "lint-staged"
   },
   "author": "dreamjser@gmail.com",
