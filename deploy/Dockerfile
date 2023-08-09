@@ -4,7 +4,7 @@ WORKDIR /apps
 
 COPY package*.json /apps/
 
-RUN npm i pnpm -g && pnpm i
+RUN npm i pnpm -g && pnpm i --ignore-scripts
 
 COPY . /apps
 
