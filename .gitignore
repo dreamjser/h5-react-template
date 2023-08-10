@@ -1,6 +1,6 @@
 node_modules/
 dist/
-
+reactapp/
 # Editor directories and files
 .idea
 .vscode
