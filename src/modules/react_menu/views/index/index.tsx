@@ -1,0 +1,33 @@
+import React, { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { NavBar, List } from 'antd-mobile'
+
+const View: FC = () => {
+  const navigate = useNavigate()
+
+  return (
+    <>
+      <NavBar backArrow={false}>react自学笔记</NavBar>
+      <List>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_component/index/index')
+          }}
+        >
+          函数组件
+        </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_jsx/index/index')
+          }}
+        >
+          jsx语法
+        </List.Item>
+      </List>
+    </>
+  )
+}
+
+export default View

@@ -7,7 +7,7 @@ module.exports = {
     '@tmp': path.resolve(__dirname, '.tmp'),
   },
   devPort: '3003',
-  modulePrefix: 'mb_',
+  modulePrefix: 'react_',
   outputPath: 'reactapp',
   proxyTable: {
     '/api': {
