@@ -25,6 +25,14 @@ const View: FC = () => {
         >
           jsx语法
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_props/index/index')
+          }}
+        >
+          props属性
+        </List.Item>
       </List>
     </>
   )
