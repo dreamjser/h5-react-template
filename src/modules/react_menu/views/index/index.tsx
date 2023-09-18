@@ -41,6 +41,14 @@ const View: FC = () => {
         >
           event事件
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_state/index/index')
+          }}
+        >
+          state
+        </List.Item>
       </List>
     </>
   )

@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import React from 'react'
 
-const View: FC = () => {
+const View = () => {
 
   return (
     <div>
