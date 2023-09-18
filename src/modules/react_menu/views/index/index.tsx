@@ -33,6 +33,14 @@ const View: FC = () => {
         >
           props属性
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_event/index/index')
+          }}
+        >
+          event事件
+        </List.Item>
       </List>
     </>
   )
