@@ -14,6 +14,7 @@ const View = () => {
     sex: '男',
   })
 
+  const [list, setList] = useImmer<Array<UserType>>([])
   const [number, setNumber] = useState(0)
 
   return (
@@ -23,11 +24,26 @@ const View = () => {
       <div>性别：{user.sex}</div>
       <div>number: {number}</div>
       <div>
+        {list.map((item: UserType) => (
+          <p key={item.name}>
+            {item.name}: {item.sex} {item.sex}
+          </p>
+        ))}
+      </div>
+      <div>
         <Button
           color="primary"
           onClick={() => {
             setUser((user: UserType) => {
               user.name = '孙元刚'
+            })
+
+            setList((draft: Array<UserType>) => {
+              draft.push({
+                name: '李四',
+                age: 26,
+                sex: '女',
+              })
             })
             setNumber(number + 1)
             setNumber((n) => n + 1)
