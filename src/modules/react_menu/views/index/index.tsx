@@ -49,6 +49,14 @@ const View: FC = () => {
         >
           state
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_state/manage/index')
+          }}
+        >
+          状态管理
+        </List.Item>
       </List>
     </>
   )
