@@ -57,6 +57,14 @@ const View: FC = () => {
         >
           状态管理
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_state/reducer/index')
+          }}
+        >
+          reducer
+        </List.Item>
       </List>
     </>
   )
