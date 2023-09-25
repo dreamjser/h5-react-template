@@ -65,6 +65,14 @@ const View: FC = () => {
         >
           reducer
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_state/context/index')
+          }}
+        >
+          context
+        </List.Item>
       </List>
     </>
   )

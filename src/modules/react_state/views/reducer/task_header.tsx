@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { taskType } from './task_type'
 
 type addProps = {
-  list: Array<taskType>
-  onAdd: (item: taskType) => void
+  onAdd: (name: string) => void
 }
 
-export default function TaskList({ list, onAdd }: addProps) {
+export default function TaskList({ onAdd }: addProps) {
   const [taskName, setTaskName] = useState('')
 
   function addTask() {
@@ -14,10 +12,7 @@ export default function TaskList({ list, onAdd }: addProps) {
       return
     }
 
-    onAdd({
-      id: list.length,
-      name: taskName,
-    })
+    onAdd(taskName)
   }
 
   return (
