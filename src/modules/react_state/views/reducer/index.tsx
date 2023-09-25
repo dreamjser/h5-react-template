@@ -3,6 +3,7 @@ import { useImmerReducer } from 'use-immer'
 import tasksReducer from './task_reducer'
 import TaskHeader from './task_header'
 import TaskList from './task_list'
+import { taskType } from './task_type'
 
 const initList = [
   {
@@ -20,11 +21,22 @@ const initList = [
 ]
 
 const View = () => {
-  const [taskList] = useImmerReducer(tasksReducer, initList)
+  const [taskList, dispatch] = useImmerReducer(tasksReducer, initList)
 
-  const addTask = () => {}
+  const addTask = ({ id, name }: taskType) => {
+    dispatch({
+      type: 'add',
+      id,
+      name,
+    })
+  }
 
-  const onDelete = () => {}
+  const onDelete = (id: number) => {
+    dispatch({
+      type: 'delete',
+      id,
+    })
+  }
 
   const onSelect = () => {}
 

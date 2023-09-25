@@ -1,19 +1,19 @@
 import { taskType } from './task_type'
 
-function tasksReducer(draft: Array<taskType>, action: any) {
+function tasksReducer(list: Array<taskType>, action: any) {
   switch (action.type) {
     case 'add': {
-      draft.push({
+      list.push({
         id: action.id,
         name: action.name,
       })
       break
     }
     case 'delete': {
-      return draft.filter((t) => t.id !== action.id)
+      return list.filter((t) => t.id !== action.id)
     }
     default: {
-      return []
+      return list
     }
   }
 }
