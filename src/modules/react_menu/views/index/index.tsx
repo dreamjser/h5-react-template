@@ -55,7 +55,7 @@ const View: FC = () => {
             navigate('/react_state/manage/index')
           }}
         >
-          状态管理
+          状态提升
         </List.Item>
         <List.Item
           clickable
@@ -72,6 +72,14 @@ const View: FC = () => {
           }}
         >
           context
+        </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_state/context_reducer/index')
+          }}
+        >
+          结合context和reducer
         </List.Item>
       </List>
     </>
