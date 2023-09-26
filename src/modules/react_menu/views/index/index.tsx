@@ -81,6 +81,14 @@ const View: FC = () => {
         >
           结合context和reducer
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_ref/index/index')
+          }}
+        >
+          ref
+        </List.Item>
       </List>
     </>
   )
