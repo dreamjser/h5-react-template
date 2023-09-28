@@ -89,6 +89,14 @@ const View: FC = () => {
         >
           ref
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_use_effect/index/index')
+          }}
+        >
+          useEffect
+        </List.Item>
       </List>
     </>
   )

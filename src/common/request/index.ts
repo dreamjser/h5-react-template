@@ -34,7 +34,7 @@ const responseHook = (reslove: any, reject: any, res: any) => {
     return
   }
 
-  reslove(data)
+  reslove(data.data)
 }
 
 const request = (opts: AllType) => {
