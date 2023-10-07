@@ -97,6 +97,14 @@ const View: FC = () => {
         >
           useEffect
         </List.Item>
+        <List.Item
+          clickable
+          onClick={() => {
+            navigate('/react_hook/index/index')
+          }}
+        >
+          自定义hook
+        </List.Item>
       </List>
     </>
   )
