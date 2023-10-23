@@ -1,5 +1,23 @@
 {
   "login": {
     "name": "syg"
+  },
+  "getAppList": [{
+    "id": "1001",
+    "name": "朝朝宝",
+    "icon": "money"
+  },{
+    "id": "1002",
+    "name": "收支明细"
+  },{
+    "id": "1003",
+    "name": "转账"
+  },{
+    "id": "1004",
+    "name": "账户总览"
+  }],
+  "getHomeBanner": {
+    "id": "1001",
+    "url": "https://images.unsplash.com/photo-1567945716310-4745a6b7844b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=60"
   }
 }
