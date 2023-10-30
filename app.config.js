@@ -8,7 +8,7 @@ module.exports = {
   },
   devPort: '3003',
   modulePrefix: 'react_',
-  outputPath: 'reactapp',
+  outputPath: 'dist',
   proxyTable: {
     '/api': {
       target: 'http://localhost:4002',
