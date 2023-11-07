@@ -20,7 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@dreamjser/h5-webpack-cli": "^1.0.32",
+    "@dreamjser/h5-webpack-cli": "^1.0.34",
     "husky": "^8.0.3",
     "json-server": "^0.17.4",
     "lint-staged": "^13.3.0",

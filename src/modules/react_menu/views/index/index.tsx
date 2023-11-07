@@ -1,10 +1,6 @@
 import React, { FC } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { NavBar, List } from 'antd-mobile'
-
 const View: FC = () => {
-  const navigate = useNavigate()
-
   return (
     <>
       <NavBar backArrow={false}>react自学笔记</NavBar>
@@ -12,7 +8,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_component/index/index')
+            App.router.push('/react_component/index/index')
           }}
         >
           函数组件
@@ -20,7 +16,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_jsx/index/index')
+            App.router.push('/react_jsx/index/index')
           }}
         >
           jsx语法
@@ -28,7 +24,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_props/index/index')
+            App.router.push('/react_props/index/index')
           }}
         >
           props属性
@@ -36,7 +32,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_event/index/index')
+            App.router.push('/react_event/index/index')
           }}
         >
           event事件
@@ -44,7 +40,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_state/index/index')
+            App.router.push('/react_state/index/index')
           }}
         >
           state
@@ -52,7 +48,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_state/manage/index')
+            App.router.push('/react_state/manage/index')
           }}
         >
           状态提升
@@ -60,7 +56,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_state/reducer/index')
+            App.router.push('/react_state/reducer/index')
           }}
         >
           reducer
@@ -68,7 +64,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_state/context/index')
+            App.router.push('/react_state/context/index')
           }}
         >
           context
@@ -76,7 +72,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_state/context_reducer/index')
+            App.router.push('/react_state/context_reducer/index')
           }}
         >
           结合context和reducer
@@ -84,7 +80,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_ref/index/index')
+            App.router.push('/react_ref/index/index')
           }}
         >
           ref
@@ -92,7 +88,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_use_effect/index/index')
+            App.router.push('/react_use_effect/index/index')
           }}
         >
           useEffect
@@ -100,7 +96,7 @@ const View: FC = () => {
         <List.Item
           clickable
           onClick={() => {
-            navigate('/react_hook/index/index')
+            App.router.push('/react_hook/index/index')
           }}
         >
           自定义hook

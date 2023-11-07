@@ -1,7 +1,8 @@
 {
   "index": {
     "index": {
-      "title": "react自学笔记-event"
+      "title": "react自学笔记-event",
+      "needLogin": false
     }
   }
 }
