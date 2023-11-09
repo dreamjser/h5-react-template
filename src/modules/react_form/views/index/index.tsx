@@ -15,9 +15,12 @@ const View = () => {
       return
     }
 
-    console.log(name, password)
-
-    App.interface.toast('提交成功')
+    App.request({
+      url: '/login',
+      method: 'GET',
+    }).then(() => {
+      App.interface.alert('提交成功')
+    })
   }
   return (
     <Form>
