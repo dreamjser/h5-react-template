@@ -6,8 +6,8 @@ export const userInfoSlice = createSlice({
     info: {} as any,
   },
   reducers: {
-    getUserInfo: (state: any) => {
-      state.info = { name: 'syg' }
+    getUserInfo: (state: any, info) => {
+      state.info = info.payload || { name: 'syg' }
     },
   },
 })
