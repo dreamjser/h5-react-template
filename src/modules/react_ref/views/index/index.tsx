@@ -1,40 +1,8 @@
-import React, {
-  useState,
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-  ReactNode,
-} from 'react'
+import React, { forwardRef, useRef } from 'react'
+import Modal from '@/common/components/modal'
 
 type modalRef = {
   toogle: () => void
-}
-
-type ModelProps = {
-  children: ReactNode
-}
-
-function Modal(props: ModelProps, ref: any) {
-  const [visible, setVisible] = useState(false)
-
-  useImperativeHandle(ref, () => {
-    return {
-      toogle() {
-        setVisible(!visible)
-      },
-    }
-  })
-  return (
-    <>
-      {visible && (
-        <div
-          style={{ width: '200px', height: '100px', backgroundColor: 'red' }}
-        >
-          {props.children}
-        </div>
-      )}
-    </>
-  )
 }
 
 const View = () => {
@@ -42,7 +10,8 @@ const View = () => {
   const modal = useRef<modalRef>(null)
 
   const toggle = () => {
-    modal.current?.toogle()
+    // modal.current?.toogle()
+    Modal.show('999')
   }
   return (
     <>
