@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Button, Form, Input } from 'antd-mobile'
 
 const View = () => {
   const [name, setName] = useState('')
@@ -23,27 +22,29 @@ const View = () => {
     })
   }
   return (
-    <Form>
-      <Form.Item label="用户名">
-        <Input
-          onChange={(value) => {
-            setName(value)
+    <div>
+      <div>
+        <label>用户名</label>
+        <input
+          onChange={(e: any) => {
+            setName(e.target.value)
           }}
           placeholder="请输入用户名"
         />
-      </Form.Item>
-      <Form.Item label="密码">
-        <Input
-          onChange={(value) => {
-            setPassword(value)
+      </div>
+      <div>
+        <label>密码</label>
+        <input
+          onChange={(e: any) => {
+            setPassword(e.target.value)
           }}
           placeholder="请输入密码"
         />
-      </Form.Item>
-      <Form.Item>
-        <Button onClick={onsubmit}>提交</Button>
-      </Form.Item>
-    </Form>
+      </div>
+      <div>
+        <button onClick={onsubmit}>提交</button>
+      </div>
+    </div>
   )
 }
 
