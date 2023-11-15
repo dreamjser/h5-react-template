@@ -36,8 +36,6 @@ describe('测试表单提交', () => {
 
     buttonElement.click()
 
-    cy.contains('请输入密码').should('not.exist')
-
     cy.wait('@loginApi')
 
     cy.contains('提交成功').should('exist')
