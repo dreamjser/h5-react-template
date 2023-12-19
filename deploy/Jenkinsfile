@@ -1,16 +1,27 @@
 def git_branch = '*/master'
 def git_url = 'https://github.com/dreamjser/h5-react-template.git'
 
-node {
-   stage("checkout"){
-		checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_auth', url: "${git_url}"]]])
-		env.Tag = sh (script: 'git log -1 --pretty=%h', returnStdout: true).trim()
+pipeline {
+  agent any
+  tools {
+    nodejs "nodejs"
+  }
+  stages {
+    stage('checkout') {
+      steps {
+        checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_auth', url: "${git_url}"]]])
+        env.Tag = sh (script: 'git log -1 --pretty=%h', returnStdout: true).trim()
 
-    echo env.Tag
-	}
-	stage("build package"){
-		sh """
-	    /bin/bash ./deploy/build.sh
-		"""
-	}
+        echo env.Tag
+      }
+    }
+
+    stage('build') {
+      steps {
+        sh """
+          /bin/bash ./deploy/build.sh
+        """
+      }
+    }
+  }
 }
