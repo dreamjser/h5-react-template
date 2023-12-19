@@ -8,8 +8,6 @@ node {
 
 	}
 	stage("build package"){
-		sh """
-	    /bin/bash ./deploy/build.sh
-		"""
+		sh '/bin/bash ./deploy/build.sh'
 	}
 }
