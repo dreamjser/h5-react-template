@@ -3,12 +3,12 @@ def git_url = 'https://github.com/dreamjser/h5-react-template.git'
 
 node {
    stage("checkout"){
-    git credentialsId: '62f021ba-8227-49d0-b215-dd05595fe8fe', url: 'https://github.com/dreamjser/h5-react-template.git'
+		checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_auth', url: "${git_url}"]]])
+		env.Tag = sh (script: 'git log -1 --pretty=%h', returnStdout: true).trim()
 
-
+    echo env.Tag
 	}
 	stage("build package"){
-    echo '1'
-    sh "node -v"
+		sh './deploy/build.sh'
 	}
 }
