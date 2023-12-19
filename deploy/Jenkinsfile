@@ -9,6 +9,8 @@ node {
     echo env.Tag
 	}
 	stage("build package"){
-		sh './deploy/build.sh'
+		sh """
+	    /bin/bash ./deploy/build.sh
+		"""
 	}
 }
