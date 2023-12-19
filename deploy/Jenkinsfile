@@ -8,8 +8,9 @@ node {
 
 	}
 	stage("build package"){
-    env.Tag = sh (script: 'git log -1 --pretty=%h', returnStdout: true).trim()
-    echo env.Tag
-		sh './build.sh'
+    sh """
+      echo '1'
+      ./build.sh
+    """
 	}
 }
