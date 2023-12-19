@@ -8,9 +8,7 @@ node {
 
 	}
 	stage("build package"){
-    sh """
-      echo '1'
-      ./build.sh
-    """
+    echo '1'
+
 	}
 }
