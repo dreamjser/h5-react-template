@@ -9,6 +9,6 @@ node {
 	}
 	stage("build package"){
     echo '1'
-    sh 'ls'
+    sh "node -v"
 	}
 }
