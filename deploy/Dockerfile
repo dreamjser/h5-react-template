@@ -1,5 +1,5 @@
 FROM nginx
 
-COPY --from=0 dist /usr/share/nginx/html/
+COPY dist /usr/share/nginx/html/
 
-COPY --from=0 deploy/default.conf /etc/nginx/conf.d/default.conf
+COPY deploy/default.conf /etc/nginx/conf.d/default.conf

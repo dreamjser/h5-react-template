@@ -1,22 +1,39 @@
 def git_branch = '*/master'
 def git_url = 'https://github.com/dreamjser/h5-react-template.git'
+def image_name = 'jenkins_react'
 
 pipeline {
   agent any
+
   tools {
     nodejs "node18"
   }
+
+  environment{
+    Tag = VersionNumber versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMddHHmmss"}.${BUILDS_TODAY}'
+  }
+
   stages {
-    stage('checkout') {
+    stage('拉取代码') {
       steps {
         checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[url: "${git_url}"]]])
       }
     }
 
-    stage('build') {
+    stage('构建代码') {
       steps {
         sh """
           /bin/bash ./deploy/build.sh
+        """
+      }
+    }
+
+    stage("构建镜像"){
+      steps {
+        sh """
+          docker build -t ${image_name}:${Tag} -f ./deploy/Dockerfile .
+          docker push ${image_name}:${Tag}
+          docker rmi ${image_name}:${Tag}
         """
       }
     }
