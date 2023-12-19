@@ -9,10 +9,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'git_auth', url: "${git_url}"]]])
-        // env.Tag = sh (script: 'git log -1 --pretty=%h', returnStdout: true).trim()
-
-        // echo env.Tag
+        checkout([$class: 'GitSCM', branches: [[name: "${git_branch}"]], extensions: [], userRemoteConfigs: [[url: "${git_url}"]]])
       }
     }
 
