@@ -38,7 +38,7 @@ node {
     sh """
       echo 'imageId: ${imageId}'
       echo 'Tag: ${Tag}'
-      if [ "${imageId}" != "${Tag}" ]
+      if [ "${imageId}" != "${Tag}" ] && [ "${imageId}" ]
       then
         docker rmi ${image_name}:${imageId}
         echo '已删除镜像${image_name}:${imageId}'
