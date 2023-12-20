@@ -36,7 +36,8 @@ node {
     env.imageId = sh (script: "docker image ls | grep ${image_name} | awk '{print \$2}'", returnStdout: true).trim()
 
     sh """
-      if ['${imageId}' != '${Tag}'];then
+      if [ "${imageId}" != "${Tag}" ]
+      then
         docker rmi ${image_name}:${imageId}
         echo '已删除镜像${image_name}:${imageId}'
       fi
