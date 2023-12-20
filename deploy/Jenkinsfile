@@ -12,6 +12,7 @@ node {
   stage('代码构建') {
     env.NODEJS_HOME = "${tool 'nodejs'}"
     env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    env.imageId = sh (script: "docker image ls | grep ${image_name} | awk '{print \$2}'", returnStdout: true).trim()
     sh """
       npm i pnpm -g
       pnpm i
@@ -33,9 +34,10 @@ node {
       echo '无容器删除'
     }
 
-    env.imageId = sh (script: "docker image ls | grep ${image_name} | awk '{print \$2}'", returnStdout: true).trim()
 
     sh """
+      echo 'imageId: ${imageId}'
+      echo 'Tag: ${Tag}'
       if [ "${imageId}" != "${Tag}" ]
       then
         docker rmi ${image_name}:${imageId}
