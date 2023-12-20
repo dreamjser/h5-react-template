@@ -33,7 +33,7 @@ node {
       echo '无容器删除'
     }
 
-    env.imageId = sh (script: "docker image ls | grep image_react_app | awk '{print \$2}'", returnStdout: true).trim()
+    env.imageId = sh (script: "docker image ls | grep ${image_name} | awk '{print \$2}'", returnStdout: true).trim()
 
     sh """
       if [${imageId} !== ${Tag}]
