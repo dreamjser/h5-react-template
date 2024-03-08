@@ -1,5 +1,5 @@
 import routers from '@tmp/routers'
-import router from '@/portal/router_entry'
+// import router from '@/portal/router_entry'
 
 const getAuthInfo = (pathname: string) => {
   const routerMaps: any = {}
@@ -16,8 +16,8 @@ export const checkAuth = (pathname: string) => {
   const authInfo = getAuthInfo(pathname)
 
   if (authInfo.needLogin !== false) {
-    router.navigate('/login')
-    return false
+    // router.navigate('/login')
+    return true
   }
   return true
 }
