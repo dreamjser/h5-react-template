@@ -140,17 +140,12 @@ opts参数可以设置axios的配置，配置同axios，同时新增了自定义
 ```
 {
   // 是否显示loading，默认true
-  slient?:
-  // 是否上传文件，默认false，为true则默认使用FormData数据
-  isUpload?: boolean
+  loading?:
   // 传参数据，不区分method
   data?: object
-  // 是否显示公共错误提示，默认true，为false可以在调用时捕获异常做处理
-  publicError?: boolean
-  // 请求发起前hook
-  requestHook?: (opts: AllType) => any
-  // 请求返回数据hook
-  responseHook?: (reslove: any, reject: any, data: any) => void
+  // 是否显示自身的提示，默认false
+  showOwnError?: boolean
+
 }
 
 ```
@@ -309,3 +304,7 @@ describe('测试Modal组件', () => {
 
 通过脚手架选择使用端到端测试，根目录会生成cypress文件夹，在cypress/e2e下创建xx.cy.js编写用例。
 运行`npm run cypress:open`打开测试平台
+
+## 12.微前端设置
+
+微应用不需要新增public_path文件，只需要在config/xx.env.js中设置PUBLIC_PATH即可

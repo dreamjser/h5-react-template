@@ -17,6 +17,7 @@
     "allowJs": true,
     "noEmit": false,
     "noEmitOnError": true,
+    "resolveJsonModule": true,
     "noImplicitReturns": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
