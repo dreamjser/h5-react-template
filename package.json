@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a template of react",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev:single": "cli-dev-s --framework=react",
     "dev:multiple": "cli-dev-m --framework=react",
@@ -22,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "@commitlint/config-conventional": "^17.8.1",
-    "@dreamjser/h5-webpack-cli": "^1.0.40",
+    "@dreamjser/h5-webpack-cli": "file:../h5-webpack-cli",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^14.3.1",
     "@types/jest": "^29.5.14",
