@@ -12,7 +12,7 @@ export default {
   },
   devPort: '3002',
   containerId: 'main_app',
-  modulePrefix: 'vue_',
+  modulePrefix: 'react_',
   outputPath: 'dist',
   proxyTable: {
     '/api': {
